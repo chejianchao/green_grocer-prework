@@ -9,7 +9,11 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  coupons.each {||}
+  coupons.each {|coupon|
+    cart[coupon[:item]] -= coupon[:num]
+    cart[coupon[:item] + "W/COUPON"] = {:price => coupon[:cost], :clearance => true, :count => coupon[:num]}
+  }
+  cart
 end
 
 def apply_clearance(cart)
