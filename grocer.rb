@@ -11,12 +11,13 @@ def consolidate_cart(cart)
   }
   res
 end
-
+require "binding"
 def apply_coupons(cart, coupons)
   # code here
   coupons.each {|coupon|
     cart[coupon[:item]][:count] -= coupon[:num]
     cart[coupon[:item] + " W/COUPON"] = {:price => coupon[:cost], :clearance => true, :count => coupon[:num]}
+    binding.pry
   }
   cart
 end
