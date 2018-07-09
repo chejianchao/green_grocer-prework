@@ -15,7 +15,7 @@ require "pry"
 def apply_coupons(cart, coupons)
   # code here
   #cart = consolidate_cart(cart)
-  puts cart, coupons
+  #puts cart, coupons
   coupons.each {|coupon|
     cart[coupon[:item]][:count] -= coupon[:num]
     cart[coupon[:item] + " W/COUPON"] = {:price => coupon[:cost], :clearance => true, :count => coupon[:num]}
@@ -36,6 +36,7 @@ end
 
 def checkout(cart, coupons)
   # code here
+  puts cart
   cart = apply_coupons(cart,coupons)
   cart = apply_clearance(cart)
   total = 0
