@@ -37,7 +37,7 @@ end
 def apply_clearance(cart)
   # code here
   cart.each {|item|
-    if item[:clearance] == true
+    if item[:clearance] === true
       item[:price] = item[:price]*0.8
     end
   }
