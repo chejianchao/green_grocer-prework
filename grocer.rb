@@ -30,5 +30,12 @@ def checkout(cart, coupons)
   # code here
   cart = apply_coupons(cart,coupons)
   cart = apply_clearance(cart)
-  
+  total = 0
+  cart.each{|item|
+    total += item[:price]
+  }
+  if total > 100
+    total *= 0.9
+  end
+  total
 end
