@@ -11,7 +11,7 @@ def consolidate_cart(cart)
   }
   res
 end
-require "binding"
+require "pry"
 def apply_coupons(cart, coupons)
   # code here
   coupons.each {|coupon|
