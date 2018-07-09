@@ -2,7 +2,12 @@ def consolidate_cart(cart)
   # code here
   res = {}
   cart.each{|item|
-    res[item.keys[0]] = item.values[0]
+    if res[item.keys[0]] == nil
+      res[item.keys[0]] = item.values[0].clone
+      res[item.keys[0]][:count] = 1
+    else
+      res[item.keys[0]][:count]+=1
+    end
   }
   res
 end
