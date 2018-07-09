@@ -16,6 +16,7 @@ def apply_coupons(cart, coupons)
   # code here
   #cart = consolidate_cart(cart)
   #puts cart, coupons
+  puts cart, coupons
   coupons.each {|coupon|
     if cart[coupon[:item]][:count] < coupon[:num]
       coupon[:num] = cart[coupon[:item]][:count]
